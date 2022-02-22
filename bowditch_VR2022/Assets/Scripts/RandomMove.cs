@@ -12,9 +12,19 @@ public class RandomMove : MonoBehaviour
         
     }
 
-    IEnumerable MoveDelay()
+    IEnumerator MoveDelay()
     {
+        while (true)
+        {
+            NewPosition();
 
+            yield return new WaitForSeconds(5.0f);
+
+            Debug.Log("Arrived and waiting");
+
+        }
+
+       
     }
 
     void NewPosition()
